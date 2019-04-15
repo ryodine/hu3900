@@ -8,7 +8,7 @@
 
     <!-- Items metadata -->
     <div id="item-metadata">
-        <?php echo all_element_texts('item', array('show_element_set_headings' => false)); ?>
+        <?php echo all_element_texts('item'); ?>
     </div>
     
     <?php if ((get_theme_option('Item FileDisplay') == 0) && metadata('item', 'has files')): ?>
