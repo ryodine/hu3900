@@ -33,7 +33,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
         }
 
         if (!$format) {
-            $format = (get_option('use_square_thumbnail') == 1) ? 'square_thumbnail' : 'thumbnail';
+            $format = 'original';
         }
 
         if ($file->hasThumbnail()) {
