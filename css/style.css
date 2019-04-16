@@ -836,7 +836,7 @@ header {
     text-align: center;
     float:right; }
   #primary-nav [aria-haspopup="true"].open:after {
-    content: "\f0d7"; float:right; margin-top:-18px; }
+    content: "\f0d7"; float:right; }
 
 #secondary-nav, .secondary-nav {
   margin-bottom: 18px;
