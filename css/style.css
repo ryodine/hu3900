@@ -763,11 +763,6 @@ header {
     width: 100%; }
   #primary-nav .nav-item > a:focus,
   #primary-nav .nav-item > a.open {
-    /*border: 1px solid #dedede;*/
-    border-right: 0;
-    margin: 0 -1px 0 0;
-    border-bottom: 0; }
-  #primary-nav .nav-item > a.open {
     background-color: #404040;
     z-index: 1; }
     #primary-nav .nav-item > a.open:before {
@@ -781,13 +776,12 @@ header {
     position: absolute;
     display: none;
     margin-top: 0;
-    padding: 0;
     border-top: 1px solid #505050;
     min-width: calc(100% + 1px);
     z-index: 999; }
   #primary-nav .sub-nav.open {
     display: block;
-    width: 160px; }
+   }
     #primary-nav .sub-nav.open li {
       width: 100%; }
   #primary-nav .subnav a:hover + ul,
