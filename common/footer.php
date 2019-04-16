@@ -1,5 +1,16 @@
 </div><!-- end content -->
 
+<?php
+    function footer_logo_uri() {
+        $footer_logo = get_theme_option('footer_logo');
+        if ($footer_logo) {
+            $storage = Zend_Registry::get('storage');
+            $uri = $storage->getUri($storage->getPathByType($footer_logo, 'theme_uploads'));
+            return $uri;
+        }
+    }
+?>
+
 <footer role="contentinfo">
 
     <div id="footer-content" class="center-div">
@@ -12,8 +23,9 @@
         <p><?php echo $copyright; ?></p>
         <?php endif; ?>
         <nav><?php echo public_nav_main()->setMaxDepth(0); ?></nav>
-        <!--<p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>--><div class="wpilogo" style="background-image:url('<?php echo img('wpi.svg', 'images'); ?>');"></div>
-
+        <? if (get_theme_option('footer_logo') != null): ?>
+            <a class="wpilogo" href="https://wpi.edu" target="_blank" style="background-image:url('<?php echo footer_logo_uri() ?>');"></a>
+        <?php endif; ?>
     </div><!-- end footer-content -->
 
      <?php fire_plugin_hook('public_footer', array('view'=>$this)); ?>
