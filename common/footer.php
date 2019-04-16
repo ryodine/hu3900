@@ -23,8 +23,8 @@
         <p><?php echo $copyright; ?></p>
         <?php endif; ?>
         <nav><?php echo public_nav_main()->setMaxDepth(0); ?></nav>
-        <? if (get_theme_option('footer_logo') != null): ?>
-            <a class="wpilogo" href="https://wpi.edu" target="_blank" style="background-image:url('<?php echo footer_logo_uri() ?>');"></a>
+        <?php if (get_theme_option('footer_logo') != null): ?>
+            <a class="wpilogo" href="https://wpi.edu" target="_blank" style="background-image:url('<?php echo footer_logo_uri(); ?>');"></a>
         <?php endif; ?>
     </div><!-- end footer-content -->
 
