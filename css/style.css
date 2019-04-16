@@ -1834,3 +1834,90 @@ footer {
   #exhibit-pages {
     width: 100%; }
   /* @end */ }
+
+
+  /** Exhibit Builder Custom CSS */
+
+div.exhibit-internal-wrap {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+div.exhibit-internal-wrap div.gallery.halfwidth .exhibit-gallery-item {
+  margin-right:10px;
+  margin-bottom:10px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 400px;
+}
+div.exhibit-internal-wrap div.gallery.halfwidth.square_thumbnail img {
+  height:400px;
+  width: 400px;
+  object-fit: cover;
+}
+
+div.exhibit-internal-wrap div.gallery-showcase img {
+  width:100%;
+}
+
+div.exhibit-internal-wrap div.gallery.with-showcase .exhibit-item, div.gallery.with-showcase .exhibit-item a {
+  display:inline-block;
+}
+
+div.exhibit-internal-wrap div.gallery.with-showcase .exhibit-item {
+  margin-right: 10px;
+  padding-top:10px;
+}
+
+@media only screen and (max-width: 767px) {
+  div.exhibit-internal-wrap div.gallery.with-showcase {
+    text-align: center; } }
+
+div.exhibit-internal-wrap div.gallery.with-showcase .exhibit-item .exhibit-item-caption {
+  width:200px;
+}
+
+div.exhibit-internal-wrap div.gallery.with-showcase.right {
+  float: right;
+}
+
+div.exhibit-internal-wrap div.captions-right .exhibit-item-caption {
+  text-align: right;
+}
+
+div.exhibit-internal-wrap div.captions-center .exhibit-item-caption {
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  div.exhibit-internal-wrap div.gallery.halfwidth .exhibit-gallery-item {
+    width: 300px; }
+  div.exhibit-internal-wrap div.gallery.halfwidth.square_thumbnail img {
+    height: 300px;
+    width: 300px; } }
+@media only screen and (min-width: 480px) and (max-width: 480px) {
+  div.exhibit-internal-wrap div.gallery.halfwidth .exhibit-gallery-item {
+    width: 300px; }
+  div.exhibit-internal-wrap div.gallery.halfwidth.square_thumbnail img {
+    height: 300px;
+    width: 300px; } }
+@media only screen and (max-width: 767px) {
+  div.exhibit-internal-wrap div.gallery.halfwidth .exhibit-gallery-item {
+    width: 300px; }
+  div.exhibit-internal-wrap div.gallery.halfwidth.square_thumbnail img {
+    height: 300px;
+    width: 300px; } }
+
+div.exhibit-internal-wrap div.gallery.halfwidth {
+  text-align: center;
+}
+div.exhibit-internal-wrap div.gallery.halfwidth img {
+  width:100%;
+  object-fit: contain;
+}
+div.exhibit-internal-wrap div.internal_summary_descriptor {
+  width: 600px;
+  margin-right: 18px;
+  min-height: 20px;
+  float:left;
+}
