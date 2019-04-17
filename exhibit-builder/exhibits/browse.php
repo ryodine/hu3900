@@ -61,7 +61,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     <?php $exhibitCount = 0; ?>
     <?php foreach (loop('exhibit') as $exhibit): ?>
         <?php $exhibitCount++; ?>
-        <a href="<?php echo exhibit_builder_exhibit_uri($exhibit, $exhibitPage) ?>" class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>" style="background-image: url(<?php echo image_uri($exhibit, null) ?>)">
+        <a href="<?php echo exhibit_builder_exhibit_uri($exhibit) ?>" class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>" style="background-image: url(<?php echo image_uri($exhibit, null) ?>)">
             <h2><?php echo exhibit_title(); ?></h2>
         </a>
     <?php endforeach; ?>
