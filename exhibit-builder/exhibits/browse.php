@@ -18,54 +18,24 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     )); ?>
 </nav>
 
-<?php
-    // Based on FileMarkup.php:image_tag()
-    function image_uri($record, $format)
-    {
-        if (!($record && $record instanceof Omeka_Record_AbstractRecord)) {
-            return false;
-        }
-
-        // Use the default representative file.
-        $file = $record->getFile();
-        if (!$file) {
-            return false;
-        }
-
-        if (!$format) {
-            $format = 'original';
-        }
-
-        if ($file->hasThumbnail()) {
-            $uri = $file->getWebPath($format);
-        } else {
-            $uri = img($this->_getFallbackImage($file));
-        }
-        return $uri;
-    }
-
-    // Based on ExhibitFunctions.php:exhibit_builder_link_to_exhibit()
-    function exhibit_title($exhibit = null, $text = null, $props = array(), $exhibitPage = null)
-    {
-        if (!$exhibit) {
-            $exhibit = get_current_record('exhibit');
-        }
-        $text = !empty($text) ? $text : html_escape($exhibit->title);
-        return $text;
-    }
-?>
-
 <?php echo pagination_links(); ?>
 
-<div class="item-container">
-    <?php $exhibitCount = 0; ?>
-    <?php foreach (loop('exhibit') as $exhibit): ?>
-        <?php $exhibitCount++; ?>
-        <a href="<?php echo exhibit_builder_exhibit_uri($exhibit) ?>" class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>" style="background-image: url(<?php echo image_uri($exhibit, null) ?>)">
-            <h2><?php echo exhibit_title(); ?></h2>
-        </a>
-    <?php endforeach; ?>
-</div>
+<?php $exhibitCount = 0; ?>
+<?php foreach (loop('exhibit') as $exhibit): ?>
+    <?php $exhibitCount++; ?>
+    <div class="exhibit <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
+        <h2><?php echo link_to_exhibit(); ?></h2>
+        <?php if ($exhibitImage = record_image($exhibit)): ?>
+            <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
+        <?php endif; ?>
+        <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
+        <div class="description"><?php echo $exhibitDescription; ?></div>
+        <?php endif; ?>
+        <?php if ($exhibitTags = tag_string('exhibit', 'exhibits')): ?>
+        <p class="tags"><?php echo $exhibitTags; ?></p>
+        <?php endif; ?>
+    </div>
+<?php endforeach; ?>
 
 <?php echo pagination_links(); ?>
 

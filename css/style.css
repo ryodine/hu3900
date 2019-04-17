@@ -1334,19 +1334,16 @@ ul.title-list {
 .browse .collection.record,
 .browse .exhibit {
   clear: both;
+  border-bottom: 1px solid #eee;
   float: left;
-  width: 100%;}
+  width: 100%;
+  padding-top: 18px; }
   .browse .collection.record .view-items-link,
   .browse .exhibit .view-items-link {
     margin-bottom: 27px; }
   .browse .collection.record h3,
   .browse .exhibit h3 {
     margin: 0; }
-
-.browse .collection.record {
-  border-bottom: 1px solid #eee;
-  padding-top: 18px;
-}
 
 .collection .element-text p:only-child {
   margin-bottom: 0; }
@@ -1361,50 +1358,9 @@ ul.title-list {
 .exhibit .image img {
   height: 126px; }
 
-.browse .collection h2 {
+.browse .collection h2,
+.browse .exhibit h2 {
   float: left;
-}
-
-.browse.exhibits .item-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.browse.exhibits .item-container .exhibit {
-  width: 50%;
-  height: 300px;
-  padding: 10px;
-
-  background-size: cover;
-  background-position: bottom;
-
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-
-  color: white;
-  text-decoration: none;
-  border: 5px solid white;
-}
-
-@media only screen and (max-width: 767px) {
-  .browse.exhibits .item-container .exhibit {
-    width: 100%;
-  }
-}
-
-.browse.exhibits .item-container .exhibit a {
-  color: white;
-}
-
-.browse.exhibits .item-container .exhibit h2 {
-  background-color: black;
-  color: white;
-  padding: 5px;
-  margin: 0;
-}
-
-.browse .collection h2 {
   display: inline;
   margin-left: 10px;
   margin-right: 10px;
@@ -1412,18 +1368,22 @@ ul.title-list {
   margin-left: 0;
   margin: 0 0 18px;
   max-width: 100%; }
-@media only screen and (max-width: 767px) {
-  .browse .collection h2 {
-    margin: 0; } }
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-  .browse .collection h2 {
-    width: 172px; } }
-@media only screen and (max-width: 767px) {
-  .browse .collection h2 {
-    width: 300px; } }
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .browse .collection h2 {
-    width: 420px; } }
+  @media only screen and (max-width: 767px) {
+    .browse .collection h2,
+    .browse .exhibit h2 {
+      margin: 0; } }
+  @media only screen and (min-width: 768px) and (max-width: 959px) {
+    .browse .collection h2,
+    .browse .exhibit h2 {
+      width: 172px; } }
+  @media only screen and (max-width: 767px) {
+    .browse .collection h2,
+    .browse .exhibit h2 {
+      width: 300px; } }
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    .browse .collection h2,
+    .browse .exhibit h2 {
+      width: 420px; } }
 
 .browse .collection .image,
 .browse .exhibit .image {
