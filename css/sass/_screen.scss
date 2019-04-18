@@ -9,7 +9,7 @@ body {
     font: $base-font-size Helvetica, Arial, sans-serif;
     line-height: $base-line-height;
     color: #333;
-    background: #fff;
+    background: $background-color;
 }
 
 form, fieldset {
@@ -43,7 +43,7 @@ input[type="checkbox"] {
 
     h1, h2, h3 {
         font-weight: normal;
-        font-family: 'Gill Sans MT', 'Gill Sans', sans-serif;
+        font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif;
         color:#015581;
     }
 
@@ -131,7 +131,7 @@ input[type="checkbox"] {
 
 header {
     @include container;
-    padding: (2 * $spacing-unit) 0;
+    padding: (2 * $spacing-unit) 0 0px 0px;
     position: relative;
 }
 
@@ -148,20 +148,27 @@ header {
 }
 
 #site-title {
-    float:left;
-    width:50%;
     font-weight: normal;
-    font-family: 'Gill Sans MT', 'Gill Sans', sans-serif;
+    font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif;
     color:#015581;
     font-size: 3 * $base-font-size;
-    line-height: 2 * $base-line-height;
     text-transform:uppercase;
     letter-spacing:.2em;
     position:relative;
 
     img {
-        max-width: 100%;
+        max-width: 300px;
         height: auto;
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        float: left;
+    }
+    @media only screen and (max-width: 767px) {
+        float: left;
+    }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        text-align:center;
     }
 }
 
@@ -169,9 +176,14 @@ header {
 
 #search-container {
     float:right;
-    width:45%;
+    width:30%;
     position:relative;
     font-size: 1.1667 * $base-font-size;
+    margin: 8px;
+
+    &.mobile {
+        margin: 0px;
+    }
 
     h2 { display:none; }
 
@@ -191,7 +203,7 @@ header {
     }
 
     button {
-        background: #369;
+        background: $search-button-background-color;
         color: white;
         position: absolute;
         border: 0;
@@ -235,8 +247,9 @@ header {
         position: absolute;
         width: 100%;
         color: #fff;
-        background:#369;
+        background: $search-button-advanced-background-color;
         top: 0;
+        left: 0;
         bottom: 0;
         font-size: 14px;
         line-height: 30px;
@@ -321,19 +334,18 @@ header {
     @include container;
     z-index: 50;
 
+    background-color: $nav-background-color;
+    border-top: 5px solid #006837;
+
     /* mega menu list */
     .nav-menu {
-        display: flex;
-        position: relative;
+        float: left;
         list-style: none;
         margin: 0;
         padding: 0;
         position: relative;
         z-index: 100;
         overflow: visible;
-        flex-wrap: wrap;
-        align-items: stretch;
-        border-right: 1px solid #ccc;
     }
 
     li {
@@ -345,15 +357,11 @@ header {
     /* a top level navigation item in the mega menu */
     .nav-item {
         list-style: none;
-        display: block;
+        display: inline-block;
         padding: 0;
         margin: 0;
-        float:none;
         position: relative;
         overflow: visible;
-        flex:1 0 auto;
-
-        &:first-child > a { border-left: 1px solid #ccc; }
     }
 
     /* first descendant link within a top level navigation item */
@@ -361,26 +369,15 @@ header {
         position: relative;
         display: inline-block;
         margin: 0;
-        border-left :1px solid #ccc;
-        border-top :1px solid #ccc;
         height: 100%;
         width: 100%;
     }
 
-    /* focus/open states of first descendant link within a top level
+    /* open state of first descendant link within a top level
        navigation item */
     .nav-item > a:focus,
     .nav-item > a.open {
-        border: 1px solid #dedede;
-        border-right: 0;
-        margin: 0 -1px 0 0;
-        border-bottom: 0;
-    }
-
-    /* open state of first descendant link within a top level
-       navigation item */
-    .nav-item > a.open {
-        background-color: #fafafa;
+        background-color: $nav-background-color;
         z-index: 1;
 
         &:before {
@@ -389,7 +386,6 @@ header {
             right: -1px;
             width: 1px;
             top: 0;
-            background-color: #dedede;
             bottom: 0;
         }
     }
@@ -399,9 +395,7 @@ header {
         position: absolute;
         display: none;
         margin-top: 0;
-        padding: 0;
-        border: 1px solid #dedede;
-        background-color: #fff;
+        border-top: 1px solid #505050;
         min-width: calc(100% + 1px);
         z-index: 999;
     }
@@ -410,7 +404,6 @@ header {
     /* sub-navigation panel open state */
     .sub-nav.open {
         display: block;
-        width: skeleton-column-width(3);
 
         li {
             width: 100%;
@@ -452,7 +445,7 @@ header {
     }
 
     .sub-nav > li {
-        border-bottom: 1px solid #ccc;
+        border-left: 2px solid #006837;
     }
 
     .sub-nav a {
@@ -463,29 +456,31 @@ header {
         behavior: url("../javascripts/boxsizing.htc");
         box-sizing: border-box;
         text-decoration:none;
+        color: $nav-item-text-color;
+        font-size: 14px;
+        background-color:$nav-background-color;
         display:block;
-        padding: (.5 * $spacing-unit) 18px;
-        background:#fafafa;
+        padding: (.75 * $spacing-unit) 24px;
     }
 
-    a:hover,
-    a:focus,
     li.active > a {
-        color:#ff8000;
         position: relative;
+        font-weight: bold;
         z-index: 1;
     }
 
     [aria-haspopup="true"]:after {
+        float: right;
+        display: inline-block;
         font-family: "FontAwesome";
         content: "\f0da";
         margin: -1px 0 0 .5em;
-        display: inline-block;
         width: $spacing-unit;
         text-align: center;
     }
 
     [aria-haspopup="true"].open:after {
+        float: right;
         content: "\f0d7";
     }
 }
@@ -551,7 +546,6 @@ header {
 .page-input input[type=text] {
     border: 1px solid #ccc;
     text-align: right;
-    width: 50px;
     margin-right: 5px;
     display: inline-block;
 }
@@ -950,14 +944,54 @@ ul.title-list {
 .browse .collection.record,
 .browse .exhibit {
     clear: both;
-    border-bottom: 1px solid #eee;
     float: left;
     width: 100%;
-    padding-top: $spacing-unit;
 
     .view-items-link { margin-bottom: 1.5 * $spacing-unit; }
 
     h3 { margin: 0; }
+}
+
+.browse.exhibits {
+    .item-container {
+        display: flex;
+        flex-wrap: wrap;
+        
+        .exhibit {
+            width: 50%;
+            height: 300px;
+            padding: 10px;
+
+            background-size: cover;
+            background-position: bottom;
+
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+
+            color: white;
+            text-decoration: none;
+            border: 5px solid white;
+
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+            }
+
+            h2 {
+                color: white;
+                background-color: black;
+                padding: 5px;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.browse .collection {
+    &.record {
+        border-bottom: 1px solid #eee;
+        padding-top: 18px;
+    }
 }
 
 .collection .element-text p:only-child { margin-bottom: 0; }
@@ -974,8 +1008,7 @@ ul.title-list {
     height: (7 * $spacing-unit);
 }
 
-.browse .collection h2,
-.browse .exhibit h2 {
+.browse .collection h2 {
     @include columns(4);
     @include alpha;
     margin: 0 0 $spacing-unit;
@@ -1099,13 +1132,29 @@ footer {
     overflow:hidden;
     margin-top: $spacing-unit;
 
+    nav {
+        @media only screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    a.wpilogo {
+        float: right;
+        width: 300px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 100% auto;
+    }
+
     a { text-decoration:none; }
 
     .navigation {
+        color: #AAA;
         font-weight:bold;
 
         li {
-            display:inline;
+            display: inline-block;
 
             &:after {
                 content: " \00B7";
@@ -1121,7 +1170,8 @@ footer {
         }
 
         a {
-            white-space:nowrap;
+            color: white;
+            white-space: nowrap;
         }
     }
 
@@ -1151,7 +1201,7 @@ footer {
         width: skeleton-column-width(4, $tablet-width); }
 
     h4 {
-        font-family: 'Gill Sans MT', 'Gill Sans', sans-serif;
+        font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif;
         font-weight: normal;
         text-transform: uppercase;
     }
@@ -1262,6 +1312,108 @@ footer {
 }
 
 /* @end */
+
+/* @group ----- Exhibit Builder Custom CSS ----- */
+
+div.exhibit-internal-wrap {
+    padding-left: 50px;
+    padding-right: 50px;
+
+    div.gallery.halfwidth {
+        text-align: center;
+
+        .exhibit-gallery-item {
+            margin-right:10px;
+            margin-bottom:10px;
+            display: inline-block;
+            vertical-align: middle;
+            width: 400px;
+
+            @media only screen and (min-width: 768px) and (max-width: 959px) {
+                width: 300px;
+            }
+
+            @media only screen and (min-width: 480px) and (max-width: 480px) {
+                width: 300px;
+            }
+
+            @media only screen and (max-width: 767px) {
+                width: 300px;
+            }
+        }
+
+        img {
+            width:100%;
+            object-fit: contain;
+        }
+
+        &.square_thumbnail img {
+            height:400px;
+            width: 400px;
+            object-fit: cover;
+    
+            @media only screen and (min-width: 768px) and (max-width: 959px) {
+                height: 300px;
+                width: 300px;
+            }
+    
+            @media only screen and (min-width: 480px) and (max-width: 480px) {
+                height: 300px;
+                width: 300px;
+            }
+    
+            @media only screen and (max-width: 767px) {
+                height: 300px;
+                width: 300px;
+            }
+        }
+    }
+
+    div.gallery-showcase img {
+        width: 100%;
+    }
+
+    div.gallery.with-showcase {
+        .exhibit-item {
+            margin-right: 10px;
+            padding-top:10px;
+            display:inline-block;
+
+            a {
+                display:inline-block;
+            }
+
+            .exhibit-item-caption {
+                width:200px;
+            }
+        }
+
+        &.right {
+            float: right;
+        }
+
+        @media only screen and (max-width: 767px) {
+            text-align: center;
+        }
+    }
+
+    div.captions-right .exhibit-item-caption {
+        text-align: right;
+    }
+
+    div.captions-center .exhibit-item-caption {
+        text-align: center;
+    }
+    
+    div.internal_summary_descriptor {
+        width: 600px;
+        margin-right: 18px;
+        min-height: 20px;
+        float:left;
+    }
+}
+
+/* @end *?
 
 /* @group ----- Other plugin styles ----- */
 

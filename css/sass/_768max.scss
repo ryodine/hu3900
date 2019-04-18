@@ -12,7 +12,6 @@ input[type=text], input[type=password], textarea {
 #search-container {
     clear: both;
     width: 100%;
-    margin: 0;
 }
 
 /* @end */
@@ -34,14 +33,15 @@ input[type=text], input[type=password], textarea {
     zoom:1;
 
     ul {
-        background:#fafafa;
-        border-bottom:1px solid #ccc;
+        background:#404040;
         width: 100%;
         padding-left: 0;
         margin: 0;
     }
 
     li {
+        background: #404040;
+        border-top: 1px solid #505050;
         text-align:left;
         display:block;
         overflow:hidden;
@@ -49,17 +49,19 @@ input[type=text], input[type=password], textarea {
     }
 
     a {
+        color: #FFF;
         text-decoration:none;
         display:block;
         padding: 10px;
-        border:1px solid #ccc;
         border-width: 1px 1px 0 1px;
     }
 
-    a:hover { background:#fff; }
+    a:hover {
+        text-decoration: underline;
+    }
 
     & > a:first-child {
-        background:#fafafa;
+        background: #404040;
         cursor: pointer;
     }
 

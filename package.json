@@ -1,12 +1,12 @@
 {
-  "name": "The Once and Future Institute Park",
-  "version": "1.0",
+  "name": "wpi-theme",
+  "version": "1.0.0",
   "description": "Theme for The Once and Future Institute Park, a modified version of the Berlin theme",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^6.4.0",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "github:gulpjs/gulp",
     "gulp-postcss": "^6.1.1",
     "gulp-sass": "^2.3.2",
     "susy": "^2.2.12"
