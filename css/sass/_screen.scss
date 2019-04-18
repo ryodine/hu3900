@@ -6,7 +6,7 @@
 * { box-sizing: border-box; }
 
 body {
-    font: $base-font-size Helvetica, Arial, sans-serif;
+    font: $base-font-size Lato, Helvetica, Arial, sans-serif;
     line-height: $base-line-height;
     color: #333;
     background: $background-color;
@@ -43,31 +43,29 @@ input[type="checkbox"] {
 
     h1, h2, h3 {
         font-weight: normal;
-        font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif;
         color:#015581;
     }
 
     h1 {
-        font-size: 2.5 * $base-font-size;
+        font-size: 2 * $base-font-size;
         line-height: 2 * $base-line-height;
-        text-transform:uppercase;
-        letter-spacing: .1em;
-        word-break: break-word
+        word-break: break-word;
+        font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif;
     }
 
     h2 {
-        font-size: 2 * $base-font-size;
+        font-size: 1.6 * $base-font-size;
         line-height: 2 * $base-line-height;
     }
 
     h3 {
-        font-size: 1.5 * $base-font-size;
-        line-height: $base-line-height;;
+        font-size: 1.4 * $base-font-size;
+        line-height: $base-line-height;
         color:#015581;
     }
 
     h4, h5 {
-        font-size: 1.25 * $base-font-size;
+        font-size: 1.2 * $base-font-size;
         line-height: $base-line-height;
     }
 
