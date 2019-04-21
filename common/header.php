@@ -21,7 +21,8 @@
     <?php fire_plugin_hook('public_head',array('view'=>$this)); ?>
     <!-- Stylesheets -->
     <?php
-    queue_css_file(array('iconfonts', 'skeleton','style'));
+    queue_css_file('common', 'all', false, 'assets');
+    queue_css_file('iconfonts');
 
     echo head_css();
     ?>
@@ -29,7 +30,7 @@
     <?php queue_js_file('vendor/selectivizr', 'javascripts', array('conditional' => '(gte IE 6)&(lte IE 8)')); ?>
     <?php queue_js_file('vendor/respond'); ?>
     <?php queue_js_file('vendor/jquery-accessibleMegaMenu'); ?>
-    <?php queue_js_file('berlin'); ?>
+    <?php queue_js_file('common.bundle', 'assets'); ?>
     <?php queue_js_file('globals'); ?>
     <?php echo head_js(); ?>
 </head>
@@ -69,6 +70,6 @@
 
         <?php echo theme_header_image(); ?>
 
-    <div id="content" role="main" tabindex="-1">
+    <div id="content" class="<?php echo @$contentclass ?>" role="main" tabindex="-1">
 
 <?php fire_plugin_hook('public_content_top', array('view'=>$this)); ?>

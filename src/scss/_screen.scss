@@ -1,6 +1,9 @@
 @import "base";
 @import "skeleton";
 
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 /* @group ----- Generic ----- */
 
 * { box-sizing: border-box; }
@@ -196,7 +199,7 @@ header {
     input[type=text] {
         padding:3px;
         width: 100%;
-        behavior: url("../javascripts/boxsizing.htc");
+        behavior: url("./boxsizing.htc");
         box-sizing: border-box;
     }
 
@@ -234,7 +237,7 @@ header {
     position: absolute;
     text-decoration:none;
     text-indent: -9999px;
-    behavior: url("../javascripts/boxsizing.htc");
+    behavior: url("./boxsizing.htc");
     box-sizing: border-box;
 
     &:after{
@@ -265,7 +268,7 @@ header {
     border: 1px solid #e7e7e7;
     width: 100%;
     padding: 1.5em 1em;
-    *behavior: url("../javascripts/boxsizing.htc");
+    *behavior: url("./boxsizing.htc");
     box-sizing: border-box;
 
     fieldset p {
@@ -451,7 +454,7 @@ header {
     }
 
     a {
-        behavior: url("../javascripts/boxsizing.htc");
+        behavior: url("./boxsizing.htc");
         box-sizing: border-box;
         text-decoration:none;
         color: $nav-item-text-color;
@@ -524,7 +527,6 @@ header {
     }
 
     li {
-        height: (2 * $spacing-unit);
         border: solid #e7e7e7;
         border-width: 1px 0 1px 1px;
         float: left;
@@ -605,7 +607,100 @@ nav + .exhibit {
 
 /* @group ----- Home Page ----- */
 
-#home {
+#home .home-content-wrapper {
+    border: 0;
+    padding: 0;
+
+    .content {
+        padding: (1 * $spacing-unit) 10px;
+    }
+
+    .hero {
+        .glide__bullets {
+            bottom: 0.5em;
+        }
+
+        .glide__slides {
+            margin: 0;
+            
+            .featured-slide .featured-content {
+                margin: 0;
+
+                width: 100%;
+                height: $hero-height;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+
+                color:white;
+
+                padding: 30px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                a.title-info {
+                    color: white;
+                    text-decoration: none;
+                    
+                    .pre-title {
+                        text-transform: uppercase;
+                        margin: 0;
+                    }
+
+                    .title {
+                        width: 100%;
+                        height: 1em;
+
+                        margin: 0;
+                        font-size: 2em;
+                        margin-top: 10px;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+
+                .description {
+                    $spacing: 30px;
+                    $fade-height: 20px;
+
+                    margin-top: $spacing;
+                    padding-bottom: calc(#{$spacing} + #{$fade-height});
+                    margin-bottom: -$fade-height;
+
+                    overflow: hidden;
+                    flex-shrink: 1;
+
+                    position: relative;
+
+                    p {
+                        margin-top: 0;
+                    }
+
+                    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) calc(100% - #{$spacing} - #{$fade-height} * 1.5), rgba(0, 0, 0, 0) calc(100% - #{$spacing}));
+                    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) calc(100% - #{$spacing} - #{$fade-height}), rgba(0, 0, 0, 0) calc(100% - #{$spacing}));
+                }
+
+                .action-btn {
+                    min-width: 100px;
+                    
+                    align-self: flex-start;
+                    display: inline-block;
+                    padding: 7px 20px;
+
+                    color: white;
+                    text-decoration: none;
+                    background-color: $search-button-background-color;
+                    border-radius: 5px;
+
+                    border: 1px solid darken($search-button-background-color, 5%);
+                }
+            }
+        }
+    }
+
     #primary {
         float:left;
         @include columns(8);
