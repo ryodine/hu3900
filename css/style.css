@@ -362,8 +362,8 @@ th {
   box-sizing: border-box; }
 
 body {
-  font: 12px Helvetica, Arial, sans-serif;
-  line-height: 18px;
+  font: 1rem Lato, Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
   color: #333;
   background: #534741; }
 
@@ -389,32 +389,30 @@ input[type="checkbox"] {
 
 /* -- Headings -- */
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 18px; }
+  margin-bottom: 1.5rem; }
 
 h1, h2, h3 {
   font-weight: normal;
-  font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif;
   color: #015581; }
 
 h1 {
-  font-size: 30px;
-  line-height: 36px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  word-break: break-word; }
+  font-size: 2rem;
+  line-height: 3rem;
+  word-break: break-word;
+  font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif; }
 
 h2 {
-  font-size: 24px;
-  line-height: 36px; }
+  font-size: 1.6rem;
+  line-height: 3rem; }
 
 h3 {
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
   color: #015581; }
 
 h4, h5 {
-  font-size: 15px;
-  line-height: 18px; }
+  font-size: 1.2rem;
+  line-height: 1.5rem; }
 
 h4 {
   font-weight: bold; }
@@ -535,7 +533,7 @@ header {
   font-weight: normal;
   font-family: 'Arvo', 'Gill Sans MT', 'Gill Sans', sans-serif;
   color: #015581;
-  font-size: 36px;
+  font-size: 3rem;
   text-transform: uppercase;
   letter-spacing: .2em;
   position: relative; }
@@ -559,7 +557,7 @@ header {
   float: right;
   width: 30%;
   position: relative;
-  font-size: 14.0004px;
+  font-size: 1.1667rem;
   margin: 8px; }
   #search-container.mobile {
     margin: 0px; }
@@ -649,7 +647,7 @@ header {
   margin-right: 5px; }
 
 #search-form fieldset fieldset {
-  margin-bottom: 18px; }
+  margin-bottom: 1.5rem; }
 
 #search-container.with-advanced .button {
   right: 30px; }
@@ -861,7 +859,7 @@ header {
   .pagination a, .pagination form {
     text-decoration: none;
     padding: 0 10px;
-    line-height: 36px;
+    line-height: 3rem;
     display: inline-block; }
 
 .page-input input[type=text] {
@@ -1015,7 +1013,7 @@ nav + .exhibit {
   margin-bottom: 18px; }
 
 .collections.show .view-items-link {
-  font-size: 15px; }
+  font-size: 1.25rem; }
 
 /* @end */
 /* @group ----- Items ----- */
@@ -1296,9 +1294,9 @@ ul.title-list {
 
 .remove_search {
   text-indent: -9999px;
-  width: 18px;
+  width: 1.5rem;
   position: relative;
-  height: 18px;
+  height: 1.5rem;
   color: #666; }
   .remove_search:after {
     content: "\f00d";
@@ -1309,7 +1307,7 @@ ul.title-list {
     top: 0;
     left: 0;
     position: absolute;
-    line-height: 18px; }
+    line-height: 1.5rem; }
 
 /* @end */
 /* @group ----- Collections/Browse ----- */
