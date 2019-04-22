@@ -1,9 +1,9 @@
-if (!Berlin) {
-    var Berlin = {};
+if (!window.Berlin) {
+    window.Berlin = {};
 }
 
-(function ($) {    
-    Berlin.dropDown = function(){
+(function ($) {
+    window.Berlin.dropDown = function(){
         var dropdownMenu = $('#mobile-nav');
         dropdownMenu.prepend('<a href="#" class="menu">Menu</a>');
         //Hide the rest of the menu

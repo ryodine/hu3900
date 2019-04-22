@@ -37,7 +37,7 @@
         Omeka.showAdvancedForm();
         Omeka.skipNav();
         Omeka.megaMenu();
-        Berlin.dropDown();
+        window.Berlin.dropDown();
     });
 </script>
 
