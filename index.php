@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-<? endif ?>
+<?php endif ?>
 
 <div class="content">
     <div id="primary">
