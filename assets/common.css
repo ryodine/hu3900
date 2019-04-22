@@ -615,7 +615,7 @@ header {
       width: 768px; } }
   @media only screen and (max-width: 767px) {
     header {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     header {
       width: 420px; } }
@@ -636,7 +636,7 @@ header {
       width: 768px; } }
   @media only screen and (max-width: 767px) {
     #header-image {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     #header-image {
       width: 420px; } }
@@ -663,7 +663,7 @@ header {
       float: left; } }
   @media only screen and (max-width: 767px) {
     #site-title {
-      float: left; } }
+      text-align: center; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     #site-title {
       text-align: center; } }
@@ -831,7 +831,7 @@ header {
       width: 768px; } }
   @media only screen and (max-width: 767px) {
     #primary-nav {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     #primary-nav {
       width: 420px; } }
@@ -1006,7 +1006,7 @@ header {
       width: 768px; } }
   @media only screen and (max-width: 767px) {
     #content {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     #content {
       width: 420px; } }
@@ -1120,7 +1120,7 @@ nav + .exhibit {
         width: 364px; } }
     @media only screen and (max-width: 767px) {
       #home .home-content-wrapper #primary {
-        width: 300px; } }
+        width: 100%; } }
     @media only screen and (min-width: 480px) and (max-width: 767px) {
       #home .home-content-wrapper #primary {
         width: 420px; } }
@@ -1141,7 +1141,7 @@ nav + .exhibit {
         width: 364px; } }
     @media only screen and (max-width: 767px) {
       #home .home-content-wrapper #secondary {
-        width: 300px; } }
+        width: 100%; } }
     @media only screen and (min-width: 480px) and (max-width: 767px) {
       #home .home-content-wrapper #secondary {
         width: 420px; } }
@@ -1204,7 +1204,7 @@ nav + .exhibit {
       width: 768px; } }
   @media only screen and (max-width: 767px) {
     .items #content {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .items #content {
       width: 420px; } }
@@ -1372,6 +1372,15 @@ div.two-column-item {
 .vvvvvvvv-popular a {
   font-size: 360%; }
 
+div.item-records {
+  padding: 10px 50px 10px 10px; }
+  div.item-records table td:first-child {
+    padding-right: 20px;
+    font-weight: bold; }
+  div.item-records table td {
+    padding: 0;
+    border-bottom: none; }
+
 /* @end */
 /* @group ----- Items/Browse ----- */
 .browse .item h2,
@@ -1392,7 +1401,7 @@ div.two-column-item {
   @media only screen and (max-width: 767px) {
     .browse .item h2,
     .browse .item-meta .item-img {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .browse .item h2,
     .browse .item-meta .item-img {
@@ -1427,7 +1436,7 @@ div.two-column-item {
       width: 556px; } }
   @media only screen and (max-width: 767px) {
     .browse .item-meta {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .browse .item-meta {
       width: 420px; } }
@@ -1450,7 +1459,7 @@ div.two-column-item {
       width: 364px; } }
   @media only screen and (max-width: 767px) {
     .browse .item-meta > div {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .browse .item-meta > div {
       width: 420px; } }
@@ -1581,7 +1590,7 @@ div.two-column-item {
       width: 172px; } }
   @media only screen and (max-width: 767px) {
     .browse .collection h2 {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .browse .collection h2 {
       width: 420px; } }
@@ -1611,7 +1620,7 @@ div.two-column-item {
       width: 412px; } }
   @media only screen and (max-width: 767px) {
     .collection-meta {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .collection-meta {
       width: 420px; } }
@@ -1705,7 +1714,7 @@ footer {
       width: 768px; } }
   @media only screen and (max-width: 767px) {
     footer {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     footer {
       width: 420px; } }
@@ -1719,6 +1728,11 @@ footer {
     background-repeat: no-repeat;
     background-position: center top;
     background-size: 100% auto; }
+    @media only screen and (max-width: 767px) {
+      footer a.wpilogo {
+        float: none;
+        display: block;
+        margin: 0 auto; } }
   footer a {
     text-decoration: none; }
   footer .navigation {
@@ -1826,7 +1840,7 @@ footer {
     #exhibit-blocks,
     #exhibit-page-navigation,
     .exhibits.summary #primary {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .exhibits #content > h1:first-of-type,
     #exhibit-blocks,
@@ -1865,7 +1879,7 @@ footer {
   @media only screen and (max-width: 767px) {
     .exhibit .description,
     .exhibit .description ~ * {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (min-width: 480px) and (max-width: 767px) {
     .exhibit .description,
     .exhibit .description ~ * {
@@ -1950,8 +1964,7 @@ div.exhibit-internal-wrap {
     min-height: 20px;
     float: left; }
 
-/* @end *?
-
+/* @end */
 /* @group ----- Other plugin styles ----- */
 #collection-tree {
   margin-left: auto;
@@ -1998,7 +2011,7 @@ div.exhibit-internal-wrap {
       width: 768px; } }
   @media only screen and (max-width: 768px) and (max-width: 767px) {
     #mobile-nav {
-      width: 300px; } }
+      width: 100%; } }
   @media only screen and (max-width: 768px) and (min-width: 480px) and (max-width: 767px) {
     #mobile-nav {
       width: 420px; } }

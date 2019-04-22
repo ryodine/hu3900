@@ -166,7 +166,7 @@ header {
         float: left;
     }
     @media only screen and (max-width: 767px) {
-        float: left;
+        text-align:center;
     }
     @media only screen and (min-width: 480px) and (max-width: 767px) {
         text-align:center;
@@ -958,6 +958,19 @@ div.two-column-item {
         font-size:360%;
     }
 
+div.item-records {
+    padding: 10px 50px 10px 10px;
+    table {
+        td:first-child {
+            padding-right:20px;
+            font-weight: bold;
+        }
+        td {
+            padding: 0;
+            border-bottom: none;
+        }
+    }
+}
 
 /* @end */
 
@@ -1269,6 +1282,11 @@ footer {
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100% auto;
+        @media only screen and (max-width: 767px) {
+            float:none;
+            display: block;
+            margin: 0 auto;
+        }
     }
 
     a { text-decoration:none; }
@@ -1537,7 +1555,7 @@ div.exhibit-internal-wrap {
     }
 }
 
-/* @end *?
+/* @end */
 
 /* @group ----- Other plugin styles ----- */
 

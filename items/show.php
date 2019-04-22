@@ -17,7 +17,7 @@
 
       <!-- Items metadata -->
       <div id="item-metadata">
-          <?php echo all_element_texts('item'); ?>
+          <?php echo all_element_texts('item', array('partial'=>'items/record-metadata.php')); ?>
       </div>
 
     <?php if(metadata('item','Collection Name')): ?>
