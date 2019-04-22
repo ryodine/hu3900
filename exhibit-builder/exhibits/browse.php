@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . '/../exhibits_theme_functions.php';
+require_once __DIR__ . '/../../theme_helpers.php';
 
-$title = __('Browse Exhibits');
+$title = __('Browse ' . Inflector::titleize(pluralized_model_name('exhibit')));
 echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 ?>
 <h1><?php echo $title; ?> <?php echo __('(%s total)', $total_results); ?></h1>
@@ -35,7 +36,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
 <?php echo pagination_links(); ?>
 
 <?php else: ?>
-<p><?php echo __('There are no exhibits available yet.'); ?></p>
+<p><?php echo __('There are no ' . pluralized_model_name('exhibit') . ' available yet.'); ?></p>
 <?php endif; ?>
 
 <?php echo foot(); ?>

@@ -1,5 +1,7 @@
 <?php
-$pageTitle = __('Browse Collections');
+require_once __DIR__ . '/../theme_helpers.php';
+
+$pageTitle = __('Browse ' . Inflector::titleize(pluralized_model_name('collection')));
 echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
 ?>
 
@@ -41,7 +43,7 @@ $sortLinks[__('Date Added')] = 'added';
     </div>
     <?php endif; ?>
 
-    <p class="view-items-link"><?php echo link_to_items_browse(__('View the items in %s', metadata('collection', array('Dublin Core', 'Title'))), array('collection' => metadata('collection', 'id'))); ?></p>
+    <p class="view-items-link"><?php echo link_to_items_browse(__('View the ' . strtolower(pluralized_model_name('item')) . ' in %s', metadata('collection', array('Dublin Core', 'Title'))), array('collection' => metadata('collection', 'id'))); ?></p>
 
     <?php fire_plugin_hook('public_collections_browse_each', array('view' => $this, 'collection' => $collection)); ?>
 
