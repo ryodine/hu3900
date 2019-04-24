@@ -10,7 +10,7 @@
         }
     }
     function footer_link_url($n="") {
-        return ((get_theme_option('footer_url'. $n) == null) ? '#' : get_theme_option('footer_url' . $n));
+        return ((get_theme_option('footer_url'. $n) == null) ? '' : 'href="' . get_theme_option('footer_url' . $n) . '"');
     }
 ?>
 
@@ -28,17 +28,17 @@
         <nav><?php echo public_nav_main()->setMaxDepth(0); ?></nav>
         <div class="flogos">
         <?php if (get_theme_option('footer_logo') != null): ?>
-            <a class="footlogo" href="<?php echo footer_link_url(); ?>" target="_blank" style="background-image:url('<?php echo footer_logo_uri(); ?>');">
+            <a class="footlogo" <?php echo footer_link_url(); ?> target="_blank" style="background-image:url('<?php echo footer_logo_uri(); ?>');">
                 <img src="<?php echo footer_logo_uri(); ?>" />
             </a>
         <?php endif; ?>
         <?php if (get_theme_option('footer_logo2') != null): ?>
-            <a class="footlogo" href="<?php echo footer_link_url("2"); ?>" target="_blank" style="background-image:url('<?php echo footer_logo_uri("2"); ?>');">
+            <a class="footlogo" <?php echo footer_link_url("2"); ?> target="_blank" style="background-image:url('<?php echo footer_logo_uri("2"); ?>');">
                 <img src="<?php echo footer_logo_uri("2"); ?>" />
             </a>
         <?php endif; ?>
         <?php if (get_theme_option('footer_logo3') != null): ?>
-            <a class="footlogo" href="<?php echo footer_link_url("3"); ?>" target="_blank" style="background-image:url('<?php echo footer_logo_uri("3"); ?>');"><img src="
+            <a class="footlogo" <?php echo footer_link_url("3"); ?> target="_blank" style="background-image:url('<?php echo footer_logo_uri("3"); ?>');"><img src="
                 <?php echo footer_logo_uri("3"); ?>" />
             </a>
         <?php endif; ?>
