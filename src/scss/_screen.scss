@@ -961,6 +961,7 @@ div.two-column-item {
 div.item-records {
     padding: 10px 50px 10px 10px;
     table {
+        table-layout:fixed;
         td:first-child {
             padding-right:20px;
             font-weight: bold;
