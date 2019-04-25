@@ -1,6 +1,6 @@
 {
   "name": "wpi-theme",
-  "version": "1.0.0",
+  "version": "1.1",
   "description": "Theme for The Once and Future Institute Park, a modified version of the Berlin theme",
   "main": "gulpfile.js",
   "dependencies": {
