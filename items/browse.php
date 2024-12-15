@@ -1,5 +1,7 @@
 <?php
-$pageTitle = __('Browse Items');
+require_once __DIR__ . '/../theme_helpers.php';
+
+$pageTitle = __('Browse ' . Inflector::titleize(pluralized_model_name('item')));
 echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
 ?>
 
